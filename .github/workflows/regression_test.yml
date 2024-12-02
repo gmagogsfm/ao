@@ -96,7 +96,7 @@ jobs:
     uses: pytorch/test-infra/.github/workflows/linux_job.yml@rocm_experiment
     with:
       timeout: 60
-      no-sudo: true
+      no-sudo: ${{ matrix.gpu-arch-type == 'rocm' }}
       rocm: ${{ matrix.gpu-arch-type == 'rocm' }}
       test-infra-ref: rocm_experiment
       runner: ${{ matrix.runs-on }}
