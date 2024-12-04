@@ -110,8 +110,9 @@ jobs:
         conda create -n venv python=3.9 -y
         conda activate venv
         echo "::group::Install newer objcopy that supports --set-section-alignment"
-        dnf config-manager --set-enabled centos-sclo-rh
-        yum install -y  devtoolset-10
+        yum list available devtoolset-10
+        dnf list available devtoolset-10
+        yum install -y devtoolset-10
         export PATH=/opt/rh/devtoolset-10/root/usr/bin/:$PATH
         python -m pip install --upgrade pip
         pip install ${{ matrix.torch-spec }}
