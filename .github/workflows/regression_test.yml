@@ -102,10 +102,6 @@ jobs:
       runner: ${{ matrix.runs-on }}
       gpu-arch-type: ${{ matrix.gpu-arch-type }}
       gpu-arch-version: ${{ matrix.gpu-arch-version }}
-      docker-image: ${{ matrix.gpu-arch-type == 'rocm' && format('pytorch/manylinux2_28-builder:{0}{1}',
-                                                                      matrix.gpu-arch-type,
-                                                                      matrix.gpu-arch-version)
-                                                           || 'pytorch/almalinux-builder' }}
       script: |
         conda create -n venv python=3.9 -y
         conda activate venv
