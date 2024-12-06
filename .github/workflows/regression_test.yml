@@ -73,9 +73,9 @@ jobs:
 
           - name: ROCM Nightly
             runs-on: linux.rocm.gpu
-            torch-spec: 'torch==2.5.1 --index-url https://download.pytorch.org/whl/rocm6.2'
+            torch-spec: 'torch==2.5.1 --index-url https://download.pytorch.org/whl/rocm6.1'
             gpu-arch-type: "rocm"
-            gpu-arch-version: "6.2"
+            gpu-arch-version: "6.1"
 
           - name: CPU 2.3
             runs-on: linux.4xlarge
